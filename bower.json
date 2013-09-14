@@ -1,0 +1,20 @@
+{
+  "name": "bazalt-theme-default",
+  "version": "1.0.0",
+  "homepage": "https://github.com/esvit/bazalt-theme-default",
+  "authors": [
+    "Vitalii Savchuk <esvit666@gmail.com>"
+  ],
+  "description": "Default theme for Bazalt CMS",
+  "main": "index.html",
+  "keywords": [
+    "theme",
+    "cms",
+    "bazalt"
+  ],
+  "license": "New BSD",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}

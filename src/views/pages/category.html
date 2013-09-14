@@ -1,0 +1,15 @@
+<div class="mainpage">
+    <div data-widget="'Components.Pages.Widgets.Page'" data-settings="{ 'id': 11 }"></div>
+
+    <h1>{{category.title|language}}</h1>
+
+    <div bz-loading-container="loading">
+        <table ng-table="tableParams" show-filter="false" class="table">
+            <tr ng-repeat="page in pagesList">
+                <td data-title="'Name'" filter="{ 'name': 'text' }" sortable="name">
+                    <a ng-href="{{ page.url }}">{{page.title|language}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

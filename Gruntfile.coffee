@@ -63,7 +63,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-beep'
 
-    grunt.registerTask 'default', [
+    grunt.registerTask 'dev', [
         'connect'
         'watch'
     ]

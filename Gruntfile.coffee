@@ -26,6 +26,13 @@ urlRewrite = (rootDir, indexFile) ->
 module.exports = (grunt) ->
     grunt.initConfig
 
+        copy:
+            frontend:
+                files: [
+                    src: 'bower_components/bazalt/build/frontend.js'
+                    dest: 'src/frontend.js'
+                ]
+
         less:
             theme:
                 src: 'assets/less/theme.less'
@@ -64,6 +71,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-beep'
 
     grunt.registerTask 'dev', [
+        'copy:frontend'
         'connect'
         'watch'
     ]

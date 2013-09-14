@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-conrib-copy',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.21
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\package.json
+6 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt\package.json
+7 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-beep\package.json
+8 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-connect\package.json
+9 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-copy\package.json
+10 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-htmlmin\package.json
+11 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-less\package.json
+12 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-requirejs\package.json
+13 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-uglify\package.json
+14 verbose read json C:\Users\esvit\Documents\GitHub\bazalt-theme-default\node_modules\grunt-contrib-watch\package.json
+15 verbose from cache C:\Users\esvit\Documents\GitHub\bazalt-theme-default\package.json
+16 verbose readDependencies using package.json deps
+17 verbose cache add [ 'grunt-conrib-copy', null ]
+18 verbose cache add name=undefined spec="grunt-conrib-copy" args=["grunt-conrib-copy",null]
+19 verbose parsed url { pathname: 'grunt-conrib-copy',
+19 verbose parsed url   path: 'grunt-conrib-copy',
+19 verbose parsed url   href: 'grunt-conrib-copy' }
+20 silly lockFile 1157658a-grunt-conrib-copy grunt-conrib-copy
+21 verbose lock grunt-conrib-copy C:\Users\esvit\AppData\Roaming\npm-cache\1157658a-grunt-conrib-copy.lock
+22 silly lockFile 1157658a-grunt-conrib-copy grunt-conrib-copy
+23 silly lockFile 1157658a-grunt-conrib-copy grunt-conrib-copy
+24 verbose addNamed [ 'grunt-conrib-copy', '' ]
+25 verbose addNamed [ null, '' ]
+26 silly lockFile 1e851e44-grunt-conrib-copy grunt-conrib-copy@
+27 verbose lock grunt-conrib-copy@ C:\Users\esvit\AppData\Roaming\npm-cache\1e851e44-grunt-conrib-copy.lock
+28 silly addNameRange { name: 'grunt-conrib-copy', range: '', hasData: false }
+29 verbose url raw grunt-conrib-copy
+30 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-conrib-copy' ]
+31 verbose url resolved https://registry.npmjs.org/grunt-conrib-copy
+32 info trying registry request attempt 1 at 22:58:39
+33 http GET https://registry.npmjs.org/grunt-conrib-copy
+34 http 404 https://registry.npmjs.org/grunt-conrib-copy
+35 silly registry.get cb [ 404,
+35 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+35 silly registry.get     date: 'Sat, 14 Sep 2013 19:58:23 GMT',
+35 silly registry.get     'content-type': 'application/json',
+35 silly registry.get     'content-length': '52',
+35 silly registry.get     'cache-control': 'must-revalidate' } ]
+36 silly lockFile 1e851e44-grunt-conrib-copy grunt-conrib-copy@
+37 silly lockFile 1e851e44-grunt-conrib-copy grunt-conrib-copy@
+38 error 404 'grunt-conrib-copy' is not in the npm registry.
+38 error 404 You should bug the author to publish it
+38 error 404
+38 error 404 Note that you can also install from a
+38 error 404 tarball, folder, or http url, or git url.
+39 error System Windows_NT 6.1.7601
+40 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-conrib-copy" "--save-dev"
+41 error cwd C:\Users\esvit\Documents\GitHub\bazalt-theme-default
+42 error node -v v0.8.21
+43 error npm -v 1.2.11
+44 error code E404
+45 verbose exit [ 1, true ]

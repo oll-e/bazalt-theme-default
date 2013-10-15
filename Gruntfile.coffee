@@ -119,11 +119,11 @@ module.exports = (grunt) ->
                 src: 'build/index.html'
                 overwrite: true
                 replacements: [{
-                    from: /<script src="(.*)require.js"><\/script>/gm
+                    from: /<script src="(.*)\/require.js"><\/script>/gm
                     to: ''
                 }, {
-                    from: '<script src="main.js"></script>'
-                    to: '<script src="js/main.min.js"></script>'
+                    from: '<script src="/main.js"></script>'
+                    to: '<script src="/js/main.min.js"></script>'
                 }]
 
     grunt.loadNpmTasks 'grunt-contrib-htmlmin'

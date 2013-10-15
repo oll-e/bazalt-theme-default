@@ -1,0 +1,30 @@
+<div class="summary clearfix">
+
+    <div class="date label label-info pull-right"><i class="icon-calendar icon-white"></i> {{
+        page.created_at|date:'dd.MM.yyyy' }}
+    </div>
+
+    <div class="block label label-info view pull-right">
+        <i class="icon-eye-open icon-white"></i> {{ page.hits }}
+    </div>
+
+    <div class="block" ng-if="showMore">
+        <a smooth-scroll data-target="top" ng-href="{{ page.url }}" title="{{page.title|language}}"
+           class="read-more btn btn-small btn-default"><i class="icon-hand-right"></i> Читать далее</a>
+    </div>
+
+    <div class="block">
+        <div bz-rating="page.rating"></div>
+    </div>
+
+    <div class="block" ng-if="page.is_allow_comments">
+        <i class="icon-comment"></i> {{ page.comments_count }}
+    </div>
+
+    <div class="block">
+        <span class='st_facebook'></span>
+        <span class='st_vkontakte'></span>
+        <span class='st_twitter'></span>
+    </div>
+
+</div>

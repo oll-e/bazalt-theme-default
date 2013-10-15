@@ -1,0 +1,33 @@
+
+<h2>Редактировать профиль</h2>
+{{user}}
+<form name="register" ng-submit="saveUser(user)" class="registration form-horizontal">
+    <fieldset>
+        <label>Имя:</label>
+        <input type="text" placeholder="Введите имя…" ng-model="user.firstname">
+    </fieldset>
+    <fieldset>
+        <label>Фамилия:</label>
+        <input type="text" placeholder="Введите фамилию…" ng-model="user.secondname">
+    </fieldset>
+    <fieldset>
+        <label>Дата рождения: </label>
+        <input type="text" placeholder="Дата рождения…" ng-model="user.birth_date" data-type="12.12.1212">
+    </fieldset>
+    <fieldset>
+        <label>Город: </label>
+        <input type="text" placeholder="Город…" ng-model="user.city">
+    </fieldset>
+    <fieldset>
+        <label>E-mail: </label>
+        <input type="email" placeholder="e-mail…" ng-model="user.email">
+    </fieldset>
+    <fieldset>
+        <label></label>
+        <button ng-disabled="register.$invalid || loading" ng-click="saveUser(user)"
+                class="btn btn-primary">
+            <span ng-hide="loading">Сохранить</span>
+            <span ng-show="loading">Сохраняется...</span>
+        </button>
+    </fieldset>
+</form>

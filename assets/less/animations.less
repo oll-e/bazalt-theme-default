@@ -1,0 +1,120 @@
+.reveal {
+  -webkit-transition:1s linear all;
+  -moz-transition:1s linear all;
+  -o-transition:1s linear all;
+  transition:1s linear all;
+
+  opacity:0;
+}
+.reveal.reveal-active {
+  opacity:1;
+}
+
+.slide-reveal {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  position:relative;
+
+  &.ng-enter {
+    opacity:0;
+    top:10px;
+  }
+  &.ng-enter-active {
+    top:0;
+    opacity:1;
+  }
+  &.ng-leave {
+    top:0;
+    position:absolute;
+    opacity:1;
+  }
+  &.ng-leave-active {
+    opacity:0;
+    top:10px;
+  }
+}
+
+.expand-enter {
+  -webkit-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  -moz-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  -o-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+}
+.expand-enter.expand-enter-active {
+  opacity:1;
+  max-height:40px;
+}
+
+.expand-leave {
+  -webkit-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  -moz-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  -o-transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+  transition:0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+
+  opacity:1;
+  max-height:40px;
+  overflow:hidden;
+}
+.expand-leave.expand-leave-active {
+  opacity:0;
+  max-height:0;
+}
+
+.example-animate-container {
+  position:relative;
+  background:white;
+  border:1px solid black;
+  height:40px;
+  overflow:hidden;
+}
+
+.example-animate-container > div {
+  padding:1em;
+}
+
+.animator-container.animations-off * {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: color 0 ease-in; /* opera is special :) */
+  transition: none;
+}
+
+
+
+
+.view-animation {
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  &.ng-enter {
+    opacity: 0;
+    margin-left: 100px;
+  }
+  &.ng-leave {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    position: absolute;
+    top: 60px;
+    opacity: 0.5;
+  }
+  &.ng-leave-active {
+    opacity: 0;
+    position: absolute;
+    top: 60px;
+    margin-left: -100px;
+  }
+  &.ng-enter-active {
+    margin-left: 0;
+    opacity: 1;
+  }
+}

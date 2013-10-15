@@ -1,0 +1,14 @@
+<h1>{{page.title|language}}</h1>
+
+<ul class="breadcrumb">
+    <li ng-repeat="crumb in page.breadcrumbs">
+        <a ng-href="{{ crumb.$url }}">{{ crumb.title|language }}</a> <span ng-if="!$last" class="divider">/</span>
+    </li>
+</ul>
+
+<div class="body" ng-bind-html="page.body.en"></div>
+
+<div bz-img="page.images"></div>
+
+<div ng-include="'/views/block/summary.html'"></div>
+<div ng-include="'/views/block/comments.html'"></div>

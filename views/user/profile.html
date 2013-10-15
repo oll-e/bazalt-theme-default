@@ -1,0 +1,46 @@
+<h1>Профиль</h1>
+<div class="user-profile">
+    <div class="row-fluid">
+        <div class="span5 profile-sidebar">
+            <div class="user-avatar">
+                <img src="http://placehold.it/250x250" alt="" />
+            </div>
+            <div class="menu">
+                <ul class="nav nav-tabs nav-stacked">
+                    <li>
+                        <a href="/user/profile/view" data-ng-class="{'active': $routeSegment.startsWith('main.profile.view')}" class="list-group-item">
+                            Профиль
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/profile/edit" data-ng-class="{'active': $routeSegment.startsWith('main.profile.edit')}" class="list-group-item">
+                            Редактировать профиль
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/profile/password" data-ng-class="{'active': $routeSegment.startsWith('main.profile.password')}" class="list-group-item">
+                            Сменить пароль
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/profile/avatar" data-ng-class="{'active': $routeSegment.startsWith('main.profile.avatar')}" class="list-group-item">
+                            Сменить аватарку
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/profile/public" data-ng-class="{'active': $routeSegment.startsWith('main.profile.public')}" class="list-group-item">
+                            Мои публикации
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="span7 info profile">
+            <div ng-switch on="settings">
+                <div app-view-segment="2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ user.login }}

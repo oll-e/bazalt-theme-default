@@ -1,0 +1,15 @@
+ <script type="text/ng-template" id="menu/item">
+    <a smooth-scroll data-target="top" data-toggle="dropdown" ng-class="{'dropdown-toggle': item.children.length}" ng-href="{{ item.url }}">
+        {{ item.title|language }}
+        <b ng-show="item.children.length" class="caret"></b>
+    </a>
+    <ul class="dropdown-menu" ng-if="item.children.length">
+        <li ng-repeat="item in item.children" ng-controller="bcMenu.Controllers.MenuItem" ng-include="'menu/item'"></li>
+    </ul>
+</script>
+
+<div>
+    <ul class="nav nav-pills">
+        <li ng-class="{'dropdown': item.children.length}" ng-repeat="item in menu.children" ng-controller="bcMenu.Controllers.MenuItem" ng-include="'menu/item'"></li>
+    </ul>
+</div>

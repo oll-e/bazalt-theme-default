@@ -1,0 +1,23 @@
+<div class="main-feed" bz-loading-container="loading" ng-init="showMore = true">
+    <table ng-table="tableParams" class="no-thead table">
+        <tr ng-repeat="page in pagesList">
+            <td>
+                <div class="feed-item">
+                    <a smooth-scroll data-target="top" class="feed-title" ng-href="{{ page.url }}">
+                        <h2>{{page.title|language}}</h2>
+                    </a>
+
+                    <hr />
+
+                    <ul class="unstyled tags">
+                        <li class="badge" ng-repeat="tag in page.tags"><a href="#" title="">{{ tag.title }}</a></li>
+                    </ul>
+
+                    <div ng-include="'/views/widgets/pages/page/' + page.template"></div>
+
+                    <div ng-include="'/views/block/summary.html'"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

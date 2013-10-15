@@ -1,0 +1,15 @@
+<div class="mainpage">
+
+    <div bz-widget="'bcPages.Widgets.Category'"></div>
+
+    <div class="main-feed">
+        <div ng-repeat="article in list">
+            <h3>{{ article.title }}</h3>
+            <hr/>
+            <div bz-comments="article.comments" class="col col-lg-4"></div>
+        </div>
+    </div>
+
+    <div jquery-galleria="page.images"></div>
+
+</div>

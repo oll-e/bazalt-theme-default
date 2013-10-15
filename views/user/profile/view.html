@@ -1,0 +1,11 @@
+
+<div class="main_info">
+    <h2>{{ user.fullname }}</h2>
+    <ul class="unstyled">
+        <li class="row-fluid" ng-show="user.firstname"><span class="span3">Имя:</span> <span class="span7">{{ user.firstname }}</span></li>
+        <li class="row-fluid" ng-show="user.secondname"><span class="span3">Фамилия:</span> <span class="span7">{{ user.secondname }}</span></li>
+        <li class="row-fluid" ng-show="user.birth_date"><span class="span3">Дата рождения:</span> <span class="span7">{{ user.birth_date }}</span></li>
+        <li class="row-fluid" ng-show="user.city"><span class="span3">Город:</span> <span class="span7">{{ user.city }}</span></li>
+        <li class="row-fluid" ng-show="user.email"><span class="span3">E-mail:</span> <span class="span7">{{ user.email }}</span></li>
+    </ul>
+</div>

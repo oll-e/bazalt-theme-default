@@ -1,0 +1,103 @@
+<div class="registration">
+    <h1>Реєстрація</h1>
+
+    <div ng-if="formError">
+        {{formError}}
+    </div>
+
+    <form class="registration form-horizontal"  name="register" ng-submit="saveUser(user)" novalidate>
+        <fieldset ng-class="{ 'has-error': (register.email.$dirty && register.email.$invalid) || formError.email}">
+            <label class="control-label col col-lg-3">E-mail<span class="star">*</span></label>
+            <div class="controls col col-lg-9">
+                <input class="form-control" type="email" placeholder="Введіть Ваш e-mail" ng-model="user.email" ng-unique="checkEmail($value)" name="email" required>
+                <div class="ng-cloak help-block" ng-show="register.email.$dirty && register.email.$error.email">
+                    Невірний e-mail
+                </div>
+                <div class="ng-cloak help-block" ng-show="register.email.$dirty && register.email.$error.unique">
+                    Користувач з таким email вже зареєстрований
+                </div>
+            </div>
+        </fieldset>
+        <fieldset ng-class="{ 'has-error': register.password.$dirty &&  register.password.$invalid }">
+            <label class="control-label col col-lg-3" for="sign-up-password">Пароль<span class="star">*</span></label>
+            <div class="controls col col-lg-9">
+                <input class="form-control" placeholder="Пароль" id="sign-up-password" name="password" type="password" ng-model="user.password" ng-required="true" ng-minlength="6" ng-maxlength="10"/>
+                <div class="ng-cloak help-block" ng-show="register.password.$dirty && register.password.$invalid">
+                    <span ng-show="register.password.$error.minlength">Пароль має бути більше 6 символів</span>
+                    <span ng-show="register.password.$error.maxlength">Пароль має не більше 10 символів</span>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset ng-class="{ 'has-error': register.spassword.$dirty && register.spassword.$invalid }">
+            <label class="control-label col col-lg-3">Підтвердити пароль<span class="star">*</span></label>
+            <div class="controls col col-lg-9">
+                <input class="form-control" placeholder="Повторно введіть пароль" name="spassword" type="password" ng-required bv-compare="user.password" ng-model="user.spassword"/>
+                <div class="ng-cloak help-block" ng-show="register.spassword.$dirty && register.spassword.$invalid">
+                    <span ng-show="register.spassword.$error.bvCompare">Паролі не співпадають</span>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label class="control-label col col-lg-3">Имя:</label>
+            <div class="controls col col-lg-9">
+                <input type="text" placeholder="Введите имя…" ng-model="user.firstname">
+            </div>
+        </fieldset>
+        <fieldset>
+            <label class="control-label col col-lg-3">Фамилия:</label>
+            <div class="controls col col-lg-9">
+                <input type="text" placeholder="Введите фамилию…" ng-model="user.secondname">
+            </div>
+        </fieldset>
+        <fieldset>
+            <label class="control-label col col-lg-3">Дата народження</label>
+            <div class="controls col col-lg-9">
+                <div class="input-append date" id="dpYears" data-date="01-01-1980" data-date-format="dd-mm-yyyy" data-date-start-view="2">
+                    <input class="col-lg-2" size="16" type="text" ng-model="user.birth_date" />
+                    <span class="add-on"><i class="icon-calendar"></i></span>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <label class="control-label col col-lg-3">Місто<span class="star">*</span></label>
+            <div class="controls col col-lg-9">
+                <input type="text" placeholder="Город…" ng-model="user.city">
+                <!--select data-placeholder="Виберіть місто" name="city" ui-select2 ng-model="user.city" >
+                    <option value=""></option>
+                    <option value="one">Вінниця</option>
+                    <option value="two">Київ</option>
+                    <option value="three">Чегнігів</option>
+                </select-->
+            </div>
+        </fieldset>
+        <!--fieldset>
+            <label class="control-label col col-lg-3">Компанія</label>
+            <div class="controls col col-lg-9">
+                <input class="form-control" type="text" placeholder="Введіть назву" name="company" ng-model="user.company">
+            </div>
+        </fieldset>
+        <fieldset>
+            <label class="control-label col col-lg-3">Сайт</label>
+            <div class="controls col col-lg-9">
+                <input class="form-control" type="text" placeholder="Введіть адресу сайту" name="site" ng-model="user.site">
+            </div>
+        </fieldset-->
+        <fieldset>
+            <div class="controls col col-lg-9 col-offset-3">
+                <label class="checkbox">
+                    <input id="tandc" ng-model="form.tandc" type="checkbox" name="tandc" ng-true-value="agreed" required="required" class="check_boxes"/>
+                    Я згоден з <a href="modals/terms" data-target="#myModal" data-toggle="modal">Terms of Use</a>
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="controls col col-lg-9 col-offset-3">
+                <button ng-disabled="register.$invalid || loading" ng-click="registerUser(user)" class="btn btn-primary">
+                    <span ng-hide="loading">Зареєстуватись</span>
+                    <span ng-show="loading">Реєстрація...</span>
+                </button>
+            </div>
+        </fieldset>
+        {{user|json}}
+    </form>
+</div>

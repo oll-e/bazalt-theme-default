@@ -71,7 +71,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-beep'
 
     grunt.registerTask 'dev', [
-        'copy:frontend'
-        'connect'
-        'watch'
+      'copy:frontend'
+      'connect'
+      'watch'
     ]

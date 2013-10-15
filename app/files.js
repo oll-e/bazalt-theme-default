@@ -3,8 +3,8 @@ define('files', [
     'views',
 
     'directives/bzScript',
+    'directives/vkGroup'
 
-    '//vk.com/js/api/openapi.js?101'
    /* 'controllers/Main',
     'controllers/SidebarMenu',
     'controllers/Login'*/

@@ -30,7 +30,7 @@ module.exports = (grunt) ->
             theme:
                 files: [{
                     expand: true
-                    src: ['assets/**', '!assets/less/**', 'bazalt.js']
+                    src: ['assets/**', '!assets/less/**']
                     dest: 'build/'
                 }]
 

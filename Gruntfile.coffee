@@ -27,16 +27,50 @@ module.exports = (grunt) ->
     grunt.initConfig
 
         copy:
-            frontend:
-                files: [
-                    src: 'bower_components/bazalt/build/frontend.js'
-                    dest: 'src/frontend.js'
-                ]
+            theme:
+                files: [{
+                    expand: true
+                    src: ['assets/**', '!assets/less/**', 'bazalt.js']
+                    dest: 'build/'
+                }]
 
         less:
             theme:
                 src: 'assets/less/theme.less'
                 dest: 'assets/css/theme.css'
+
+        requirejs:
+            frontend:
+                options:
+                    baseUrl: './app'
+                    optimize: 'none'
+                    preserveLicenseComments: false
+                    useStrict: true
+                    wrap:
+                        start: "(function() {"
+                        end: "require(['main']) }());"
+                    mainConfigFile: 'main.js'
+                    name: 'main'
+                    include: ['requirejs']
+                    exclude: ['./views.js']
+                    out: 'build/js/main.min.js'
+
+        uglify:
+            frontend:
+                src: ['build/js/main.min.js']
+                dest: 'build/js/main.min.js'
+
+            options:
+                compress: false
+                mangle: false
+                preserveComments: false
+                beautify:
+                    ascii_only: true
+                sourceMappingURL: (fileName) ->
+                    fileName.replace(/^build\/js\//, '')
+                    .replace(/\.js$/, '.map')
+                sourceMap: (fileName) ->
+                    fileName.replace(/\.js$/, '.map')
 
         watch:
             css:
@@ -60,7 +94,38 @@ module.exports = (grunt) ->
                         connect.static options.base
                         connect.directory options.base
                     ]
-                
+
+        htmlmin:
+            backend:
+                files:
+                    'build/index.html': 'index.html'
+                options:
+                    removeComments: true
+                    removeRedundantAttributes: true
+                    useShortDoctype: true
+                    removeOptionalTags: true
+                    collapseWhitespace: true
+
+        ngTemplateCache:
+            views:
+                files:
+                    './build/views.js': ['./views/**/*.html', './bazalt/src/**/*.html']
+                options:
+                    trim: '.'
+                    module: 'app'
+
+        replace:
+            admin:
+                src: 'build/index.html'
+                overwrite: true
+                replacements: [{
+                    from: /<script src="(.*)require.js"><\/script>/gm
+                    to: ''
+                }, {
+                    from: '<script src="main.js"></script>'
+                    to: '<script src="js/main.min.js"></script>'
+                }]
+
     grunt.loadNpmTasks 'grunt-contrib-htmlmin'
     grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-uglify'
@@ -68,10 +133,21 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-less'
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-connect'
-    grunt.loadNpmTasks 'grunt-beep'
+    grunt.loadNpmTasks 'grunt-text-replace'
+    grunt.loadNpmTasks 'grunt-hustler'
 
     grunt.registerTask 'dev', [
-        'copy:frontend'
+        'copy:theme'
         'connect'
         'watch'
+    ]
+
+    grunt.registerTask 'default', [
+        'ngTemplateCache'
+        'less:theme'
+        'copy:theme'
+        'requirejs'
+        'uglify'
+        'htmlmin'
+        'replace'
     ]

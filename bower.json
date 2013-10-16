@@ -18,10 +18,10 @@
     "bootstrap": "~3.0.0",
     "angular-animate": "~1.2.0-rc.2",
     "angular-route": "~1.2.0-rc.2",
-      "ng-editable-tree": "*",
+    "ng-editable-tree": "*",
     "angular-route-segment": "https://github.com/esvit/angular-route-segment.git#~1.2.1",
-      "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master",
-      "ng-ckeditor": "*",
+    "angular-file-upload": "https://github.com/esvit/angular-file-upload.git#master",
+    "ng-ckeditor": "*",
     "angular-smoothscroll": "*",
     "requirejs": "~2.1.8",
     "angular-social": "~0.1.0",
@@ -29,6 +29,7 @@
     "ng-table": "~0.2.2",
     "jquery-ui": "~1.10.3",
     "angular-cookies": "~1.0.8",
-    "fancybox": "~2.1.5"
+    "fancybox": "~2.1.5",
+    "font-awesome": "~3.2.1"
   }
 }

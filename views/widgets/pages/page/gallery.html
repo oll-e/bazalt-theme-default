@@ -6,7 +6,7 @@
     <div ng-bind-html="page.body.en"></div>
 </div>
 
-<ul class="images thumbnails">
+<ul class="page-images list-unstyled nav-pills nav">
     <li ng-repeat="image in page.images|limitTo:8">
         <a class="thumbnail" ng-href="{{ page.url }}" rel="gallery"><img ng-src="{{ image.thumbnails.preview }}"/></a>
     </li>

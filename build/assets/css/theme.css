@@ -6282,31 +6282,21 @@ td.visible-print {
   opacity: 0;
   top: 10px;
 }
-.expand-enter {
-  -webkit-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  -moz-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  -o-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+.expand.ng-hide-add,
+.expand.ng-hide-remove {
+  -webkit-transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+  -moz-transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+  -o-transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+  display: block !important;
 }
-.expand-enter.expand-enter-active {
+.expand.ng-hide-add,
+.expand.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
-  max-height: 40px;
 }
-.expand-leave {
-  -webkit-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  -moz-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  -o-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
-  opacity: 1;
-  max-height: 40px;
-  overflow: hidden;
-}
-.expand-leave.expand-leave-active {
+.expand.ng-hide-add.ng-hide-add-active,
+.expand.ng-hide-remove {
   opacity: 0;
-  max-height: 0;
 }
 .example-animate-container {
   position: relative;
@@ -6366,7 +6356,7 @@ td.visible-print {
   left: -10px;
   right: -10px;
   bottom: -5px;
-  min-height: 50px;
+  min-height: 20px;
   min-width: 50px;
 }
 .loading-container .loading:before {
@@ -6997,13 +6987,13 @@ body a:focus {
 body a.navbar-brand {
   color: #333333;
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   text-transform: uppercase;
 }
 body .navbar .nav li a {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 body .navbar .nav li a.dropdown-toggle .caret {
   border-bottom-color: #777777;
@@ -7078,4 +7068,37 @@ h1 {
   margin: 10px 0;
   font-weight: bold;
   text-transform: uppercase;
+}
+.label.label-info {
+  margin: 0 3px;
+}
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th,
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td {
+  border: medium none;
+}
+.page-images li {
+  display: inline-block;
+  *display: inline;
+  float: none;
+  margin: 0 10px 20px;
+  vertical-align: top;
+}
+.page-images li a.thumbnail {
+  border-radius: 0 0 0 0;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.page-images li + li {
+  margin-left: 10px;
+}
+.summary {
+  margin-top: 10px;
+}
+.feed-item {
+  margin-bottom: 20px;
 }

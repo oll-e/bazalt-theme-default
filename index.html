@@ -32,16 +32,17 @@
     <div class="container">
         <div class="row">
             <div class="col col-lg-9 content" bz-loading-container="loading">
-                <div app-view-segment="0" class="view-animation"></div>
+                <div class="slide-reveal" app-view-segment="0"></div>
             </div>
             <div class="col col-lg-3 sidebar" ng-include="'/views/block/sidebar.html'">
 
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
 
-<div id="footer">
+<div id="footer" class="ng-cloak">
     <div class="container">
         <p class="text-muted credit"><a href="http://bazalt-cms.com/">Bazalt CMS</a></p>
     </div>

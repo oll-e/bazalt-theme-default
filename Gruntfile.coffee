@@ -75,12 +75,12 @@ module.exports = (grunt) ->
         watch:
             css:
                 files: 'assets/**/*.less'
-                tasks: ['less', 'beep']
+                tasks: ['less']
                 options:
                     livereload: true
             html:
                 files: 'views/**/*.html'
-                tasks: 'beep'
+                tasks: []
                 options:
                     livereload: true
 

@@ -1,11 +1,30 @@
-
 <div class="main_info">
-    <h2>{{ user.fullname }}</h2>
-    <ul class="unstyled">
-        <li class="row-fluid" ng-show="user.firstname"><span class="span3">Имя:</span> <span class="span7">{{ user.firstname }}</span></li>
-        <li class="row-fluid" ng-show="user.secondname"><span class="span3">Фамилия:</span> <span class="span7">{{ user.secondname }}</span></li>
-        <li class="row-fluid" ng-show="user.birth_date"><span class="span3">Дата рождения:</span> <span class="span7">{{ user.birth_date }}</span></li>
-        <li class="row-fluid" ng-show="user.city"><span class="span3">Город:</span> <span class="span7">{{ user.city }}</span></li>
-        <li class="row-fluid" ng-show="user.email"><span class="span3">E-mail:</span> <span class="span7">{{ user.email }}</span></li>
-    </ul>
+    <h2>{{ user.firstname }} {{ user.secondname }} <a href="/user/profile/edit"><span class="icon-pencil"></span></a></h2>
+
+    <form class="registration form-horizontal">
+        <div ng-show="user.firstname" class="control-group">
+            <label class="control-label">Имя</label>
+            <div class="controls">
+                <input type="text" disabled value="{{ user.firstname }}">
+            </div>
+        </div>
+        <div ng-show="user.secondname" class="control-group">
+            <label class="control-label">Фамилия</label>
+            <div class="controls">
+                <input type="text" disabled value="{{ user.secondname }}">
+            </div>
+        </div>
+        <div ng-show="user.birth_date" class="control-group">
+            <label class="control-label">Дата рождения</label>
+            <div class="controls">
+                <input type="text" disabled value="{{ user.birth_date }}">
+            </div>
+        </div>
+        <div ng-show="user.email" class="control-group">
+            <label class="control-label">E-mail</label>
+            <div class="controls">
+                <input type="text" disabled value="{{ user.email }}">
+            </div>
+        </div>
+    </form>
 </div>

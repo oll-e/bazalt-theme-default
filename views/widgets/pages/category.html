@@ -1,6 +1,6 @@
 <div class="main-feed category widget" bz-loading-container="loading" ng-init="showMore = true">
     <table ng-table="tableParams" class="no-thead table">
-        <tr ng-repeat="page in pagesList">
+        <tr ng-repeat="page in pages.get({ 'truncate': 500 })">
             <td>
                 <div class="feed-item">
                     <a smooth-scroll data-target="top" class="feed-title" ng-href="{{ page.url }}">

@@ -1,36 +1,45 @@
 <div class="loginForm">
-    <form class="form-horizontal" name="login" ng-submit="loginUser(user)" novalidate>
+    <h1>Вход</h1>
+
+    <div class="alert alert-success" ng-if="user_activated">
+        Пользователь был активирован, можете зайти под Вашим логином/паролем
+    </div>
+
+    <form bz-loading-container="loading" class="registration form-horizontal" name="login" ng-submit="loginUser(user)" novalidate>
         <div ng-show="error" class="alert alert-error">
             <a data-dismiss="alert" class="close">×</a>
             <div ng-bind-html-unsafe="error"></div>
         </div>
-        <fieldset>
-            <label for="email" class="control-label col col-lg-3">E-mail<span class="star">*</span></label>
-            <div class="controls col col-lg-3">
+
+        <div class="control-group" ng-class="{ 'error': errors.email }">
+            <label for="email" class="control-label">E-mail<span class="star">*</span></label>
+            <div class="controls">
                 <input id="email" ng-model="user.email" type="text" name="email" required="required" class="form-control"/>
-                <span ng-show="login.email.$error.email" class="help-block"><small>Будь ласка, введіть діючий e-mail.</small></span>
-                <span ng-show="login.email.$error.exist_user" class="help-block"><small>Невірний логін або пароль</small></span>
+                <span ng-if="errors.email.required" class="help-block"><small>Заполните поле</small></span>
+                <span ng-if="errors.email.exist_user" class="help-block"><small>Пользователя с таким логином и паролем не существует</small></span>
             </div>
-        </fieldset>
-        <fieldset>
-            <label for="password" class="control-label col col-lg-3">Пароль<span class="star">*</span></label>
-            <div class="controls col col-lg-3">
+        </div>
+        <div class="control-group" ng-class="{ 'error': errors.password }">
+            <label for="password" class="control-label">Пароль<span class="star">*</span></label>
+            <div class="controls">
                 <input id="password" ng-model="user.password" type="password" name="password" required="required" class="form-control"/>
-                <a href="#!/user/recovery" id="forgot-password"><small>Забули пароль?</small></a>
+                <a href="/user/recovery" id="forgot-password"><small>Забыли пароль?</small></a>
             </div>
-        </fieldset>
-        <fieldset>
-            <div class="controls col col-lg-3 col-offset-3">
+        </div>
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
                 <label class="checkbox">
-                    <small>Запам'ятати мене</small>
+                    <small>Запомнить меня</small>
                     <input id="remember_me" ng-model="user.remember_me" type="checkbox" name="remember_me" checked="true" class="optional"/>
                 </label>
             </div>
-        </fieldset>
-        <fieldset>
-            <div class="controls col col-lg-3 col-offset-3">
-                <button id="btn-login" ng-click="loginUser()" class="btn btn-primary"><i class="icon-lock icon-white"></i>&nbsp; Увійти</button>
+        </div>
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
+                <button id="btn-login" type="submit" class="btn btn-primary"><i class="icon-lock icon-white"></i>&nbsp; Войти</button>
             </div>
-        </fieldset>
+        </div>
     </form>
 </div>

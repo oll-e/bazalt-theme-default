@@ -8,6 +8,7 @@ define('app', [
     'modules/bzLoading/module',
     'modules/bzImg/module',
     'modules/bzGalleria/module',
+    'modules/bzDatepicker/module',
 
     'components/bcPages/module',
     'components/bcMenu/module',
@@ -24,6 +25,7 @@ define('app', [
     modules.push('bzLoading');
     modules.push('bzImg');
     modules.push('bzGalleria');
+    modules.push('bzDatepicker');
 
     // components
     modules.push('Components.bcUsers');

@@ -1,8 +1,10 @@
 @import "../../bower_components/bootstrap/less/bootstrap";
 @import "../../bower_components/bootstrap/less/theme";
+//@import "../../bower_components/bootstrap-datepicker/less/datepicker";
 @import "animations";
 @import "loader";
 @import "comments";
+@import "profile";
 @import "../../bower_components/font-awesome/less/font-awesome";
   //@import "../../bower_components/bootstrap-datepicker/css/datepicker.css";
 @import "jquery.fancybox.less";
@@ -69,7 +71,7 @@ body {
     }
 
     &.navbar-brand {
-      color: #f2f2f2;
+      color: #333;
       .header-font();
       font-size: 20px;
       font-weight: normal;
@@ -81,9 +83,9 @@ body {
   .navbar {
     min-height: 40px;
     .navbar-brand {
-      color: #f2f2f2;
+      color: #333;
       &:focus, &:hover {
-        color: #fff;
+        color: #000;
       }
     }
     .nav {
@@ -93,7 +95,7 @@ body {
           .header-font();
           font-size: 17px;
           padding: 10px 15px;
-          color: #f2f2f2;
+          color: #333;
           &.dropdown-toggle {
             .caret {
               border-bottom-color: #777;
@@ -113,7 +115,6 @@ body {
             text-shadow: none;
           }
         }
-        
         &.open {
           a {
             background-color: #757575;

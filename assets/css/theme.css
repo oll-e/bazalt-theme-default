@@ -6471,7 +6471,197 @@ td.visible-print {
 .comments .comment .comment-body:hover > .panel-heading .b-rating {
   opacity: 1;
 }
-/*!
+/*form registration*/
+.registration .control-group {
+  margin-bottom: 10px;
+}
+.registration .control-group .control-label {
+  display: inline-block;
+  line-height: 30px;
+  margin-top: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 200px;
+}
+.registration .control-group .controls {
+  display: inline-block;
+  width: 250px;
+}
+.registration .control-group .controls .date {
+  max-width: 250px;
+}
+.registration .control-group .controls .date .input-group-addon {
+  cursor: pointer;
+}
+.registration .control-group .controls .date .input-group-addon:not(:first-child):not(:last-child) {
+  border-radius: 0 4px 4px 0;
+}
+.registration .control-group .controls .help-block {
+  color: #999999;
+  display: block;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+/*form registration*/
+/*profile*/
+.user-profile .profile-sidebar .user-avatar {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.user-profile .profile-sidebar .user-avatar img {
+  width: 100%;
+  height: auto;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  padding: 10px;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar a {
+  color: #f2f2f2;
+  text-shadow: none;
+  margin-top: 0;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item {
+  background: transparent;
+  border: medium none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input {
+  font-size: 36px;
+  height: 35px !important;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 98%;
+  z-index: 1;
+}
+.user-profile .profile-sidebar .user-avatar .b-edit-avatar .list-group-item input:hover {
+  cursor: pointer;
+}
+.user-profile .profile-sidebar .user-avatar:hover .b-edit-avatar {
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -ms-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  bottom: 0;
+}
+.user-profile .profile-sidebar .menu {
+  padding-top: 0px;
+}
+.user-profile .profile-sidebar .menu .nav {
+  border-bottom: 1px solid #dddddd;
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+.user-profile .profile-sidebar .menu .nav > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.user-profile .profile-sidebar .menu .nav > li > a {
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.user-profile .profile-sidebar .menu .nav > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+.user-profile .profile-sidebar .menu .nav > li.active > a,
+.user-profile .profile-sidebar .menu .nav > li.active > a:hover,
+.user-profile .profile-sidebar .menu .nav > li.active > a:focus {
+  color: #555555;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li {
+  float: none;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .user-profile .profile-sidebar .menu .nav.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > li > a {
+  border-bottom: 1px solid #dddddd;
+  margin-right: 0;
+}
+.user-profile .profile-sidebar .menu .nav.nav-justified > .active > a {
+  border-bottom-color: #ffffff;
+}
+.user-profile .profile-sidebar .menu .nav [class^="icon-"],
+.user-profile .profile-sidebar .menu .nav [class*=" icon-"],
+.user-profile .profile-sidebar .menu .nav [class^="icon-"].icon-large,
+.user-profile .profile-sidebar .menu .nav [class*=" icon-"].icon-large {
+  line-height: .9em;
+}
+.user-profile .profile-sidebar .menu .nav > li {
+  float: none;
+}
+.user-profile .profile-sidebar .menu .nav > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.user-profile .profile-sidebar .menu .nav li {
+  margin-bottom: -3px;
+}
+.user-profile .profile-sidebar .menu .nav li a {
+  font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: transparent;
+  border: 1px solid #DDDDDD;
+  border-radius: 0;
+  margin: 0;
+}
+.user-profile .profile-sidebar .menu .nav li a:hover,
+.user-profile .profile-sidebar .menu .nav li a:focus {
+  color: #fff;
+  background: #757575;
+  border: 1px solid #DDDDDD;
+}
+.user-profile .profile-sidebar .menu .nav li:first-child a {
+  border-radius: 0;
+}
+.user-profile .profile-sidebar .menu .nav li:last-child a {
+  border-radius: 0 0 4px 4px;
+}
+/*profile*//*!
  *  Font Awesome 3.2.1
  *  the iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -8469,7 +8659,7 @@ body a:focus {
   text-decoration: underline;
 }
 body a.navbar-brand {
-  color: #f2f2f2;
+  color: #333;
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: normal;
@@ -8480,11 +8670,11 @@ body .navbar {
   min-height: 40px;
 }
 body .navbar .navbar-brand {
-  color: #f2f2f2;
+  color: #333;
 }
 body .navbar .navbar-brand:focus,
 body .navbar .navbar-brand:hover {
-  color: #fff;
+  color: #000;
 }
 body .navbar .nav {
   margin: 7.5px -15px;
@@ -8533,7 +8723,7 @@ body .navbar .nav li a {
   font-family: 'bebas_neue_cyrillicregular', Arial, Helvetica, sans-serif;
   font-size: 17px;
   padding: 10px 15px;
-  color: #f2f2f2;
+  color: #333;
 }
 body .navbar .nav li a.dropdown-toggle .caret {
   border-bottom-color: #777;

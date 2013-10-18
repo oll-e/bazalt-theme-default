@@ -1,46 +1,46 @@
 <h1>Профиль</h1>
-<div class="user-profile">
-    <div class="row-fluid">
-        <div class="span5 profile-sidebar">
-            <div class="user-avatar">
-                <img src="http://placehold.it/250x250" alt="" />
-            </div>
-            <div class="menu">
-                <ul class="nav nav-tabs nav-stacked">
-                    <li>
-                        <a href="/user/profile/view" data-ng-class="{'active': $routeSegment.startsWith('main.profile.view')}" class="list-group-item">
-                            Профиль
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/user/profile/edit" data-ng-class="{'active': $routeSegment.startsWith('main.profile.edit')}" class="list-group-item">
-                            Редактировать профиль
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/user/profile/password" data-ng-class="{'active': $routeSegment.startsWith('main.profile.password')}" class="list-group-item">
-                            Сменить пароль
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/user/profile/avatar" data-ng-class="{'active': $routeSegment.startsWith('main.profile.avatar')}" class="list-group-item">
-                            Сменить аватарку
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/user/profile/public" data-ng-class="{'active': $routeSegment.startsWith('main.profile.public')}" class="list-group-item">
-                            Мои публикации
-                        </a>
-                    </li>
-                </ul>
+
+<div class="row user-profile">
+    <div class="col col-lg-3 profile-sidebar">
+        <div class="user-avatar">
+            <!--img ng-if="!user.avatar" src="http://placehold.it/200x200" />
+            <img ng-if="user.avatar" ng-src="{{ user.avatar }}" /-->
+            <img src="http://placehold.it/200x200" />
+            <div class="b-edit-avatar">
+                <span class="list-group-item btn btn-default">
+                    <a class="btn btn-link" href="">Сменить аватарку</a>
+                    <input class="btn-file-uploader" ng-file-select type="file" />
+                </span>
             </div>
         </div>
-        <div class="span7 info profile">
-            <div ng-switch on="settings">
-                <div app-view-segment="2"></div>
-            </div>
+        <div class="menu">
+            <ul class="nav nav-tabs nav-stacked">
+                <li>
+                    <a href="/user/profile/view" data-ng-class="{'active': $routeSegment.startsWith('profile.view')}" class="list-group-item">
+                        Профиль
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/profile/edit" data-ng-class="{'active': $routeSegment.startsWith('profile.edit')}" class="list-group-item">
+                        Редактировать профиль
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/profile/password" data-ng-class="{'active': $routeSegment.startsWith('profile.password')}" class="list-group-item">
+                        Сменить пароль
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/profile/posts" data-ng-class="{'active': $routeSegment.startsWith('profile.post')}" class="list-group-item">
+                        Мои публикации
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col col-lg-9 b-profile-content">
+        <div class="info profile">
+            <div app-view-segment="1"></div>
         </div>
     </div>
 </div>
-
-{{ user.login }}

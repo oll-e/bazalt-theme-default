@@ -1,14 +1,30 @@
-<h1>{{page.title|language}}</h1>
+<div class="row">
+    <div class="col col-lg-3 sidebar">
+        <div bz-widget="'bcPages.Widgets.Category'" data-settings="{ 'category_id': page.category_id, templateUrl: '/views/widgets/pages/category/menu.html' }"></div>
+        <!--div ng-include="'/views/block/sidebar.html'"></div-->
+    </div>
+    <div class="col col-lg-9 content" bz-loading-container="loading">
+        <div class="default slide-reveal" app-view-segment="1">
 
-<ul class="breadcrumb">
-    <li ng-repeat="crumb in page.breadcrumbs">
-        <a ng-href="{{ crumb.$url }}">{{ crumb.title|language }}</a> <span ng-if="!$last" class="divider">/</span>
-    </li>
-</ul>
+            <h1>{{page.title|language}}</h1>
 
-<div class="body" ng-bind-html="page.body.en"></div>
+            <ul class="breadcrumb">
+                <li class="main-page">
+                    <a href="/">Главная</a>
+                </li>
+                <li ng-repeat="crumb in page.breadcrumbs">
+                    <a ng-href="{{ crumb.$url }}">{{ crumb.title|language }}</a> <span ng-if="!$last"
+                                                                                       class="divider">/</span>
+                </li>
+            </ul>
 
-<div bz-img="page.images"></div>
+            <div class="body" ng-bind-html="page.body.en"></div>
 
-<div ng-include="'/views/block/summary.html'"></div>
-<div ng-include="'/views/block/comments.html'"></div>
+            <div bz-img="page.images"></div>
+
+            <div ng-include="'/views/block/summary.html'"></div>
+            <div ng-include="'/views/block/comments.html'"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

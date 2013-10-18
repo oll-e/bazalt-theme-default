@@ -8,7 +8,6 @@
 @import "jquery.fancybox.less";
 @import "galleria.classic.less";
 
-
 @font-face {
   font-family: 'bebas_neue_cyrillicregular';
   src: url('../font/bebas_neue_cyrillic_2-webfont.eot');
@@ -60,9 +59,9 @@ body {
   line-height: 20px;
   color: #333333;
   background: url("../img/main-bg.gif") repeat top left transparent;
-  padding-top: 70px; /*height top navigation*/
+  padding-top: 60px; /*height top navigation*/
   a {
-    color: #0088cc;
+    color: #0088CC;
     cursor: pointer;
     &:hover, &:focus {
       color: #005580;
@@ -70,23 +69,35 @@ body {
     }
 
     &.navbar-brand {
-      color: #333333;
+      color: #f2f2f2;
       .header-font();
       font-size: 20px;
       font-weight: normal;
       text-transform: uppercase;
+      padding: 10px 15px;
+
     }
   }
   .navbar {
+    min-height: 40px;
+    .navbar-brand {
+      color: #f2f2f2;
+      &:focus, &:hover {
+        color: #fff;
+      }
+    }
     .nav {
+      .navbar-nav();
       li {
         a {
           .header-font();
           font-size: 17px;
+          padding: 10px 15px;
+          color: #f2f2f2;
           &.dropdown-toggle {
             .caret {
-              border-bottom-color: #777777;
-              border-top-color: #777777;
+              border-bottom-color: #777;
+              border-top-color: #777;
               margin-top: 6px;
             }
             &:hover, &:focus {
@@ -94,6 +105,24 @@ body {
                 border-bottom-color: #333;
                 border-top-color: #333;
               }
+            }
+          }
+          &:hover, &:focus {
+            background-color: #757575;
+            color: #fff;
+            text-shadow: none;
+          }
+        }
+        
+        &.open {
+          a {
+            background-color: #757575;
+            color: #fff;
+            text-shadow: none;
+            &:hover, &:focus {
+              background-color: #757575;
+              color: #fff;
+              text-shadow: none;
             }
           }
         }
@@ -120,6 +149,10 @@ h1, h2, h3 {
   line-height: 30px;
   margin: 0;
   padding: 0;
+}
+
+h2, .h2 {
+  font-size: 28px;
 }
 
 h1 {
@@ -159,7 +192,7 @@ h3 {
   border: medium none;
 }
 
-.page-images {
+.page-images, .images {
   li {
     display: inline-block;
     *display: inline;
@@ -186,4 +219,108 @@ h3 {
 
 .feed-item {
   margin-bottom: 20px;
+  .body {
+    margin-bottom: 10px;
+  }
 }
+
+.sidebar {
+  padding-top: 25px;
+  .nav {
+    .nav-tabs();
+    .nav-stacked();
+    border-bottom: none;
+    margin-bottom: 20px;
+    li {
+      margin-bottom: -3px;
+      a {
+        .header-font();
+        font-size: 14px;
+        color: #333;
+        background: transparent;
+        border: 1px solid #DDDDDD;
+        border-radius: 0;
+        &:hover, &:focus {
+          color: #fff;
+          background: #757575;
+          border: 1px solid #DDDDDD;
+        }
+      }
+      &:first-child {
+        a {
+          border-radius: 4px 4px 0 0;
+        }
+      }
+      &:last-child {
+        a {
+          border-radius: 0 0 4px 4px;
+        }
+      }
+    }
+  }
+}
+
+.main-container {
+  position: relative;
+}
+
+/*b-news*/
+.b-news {
+  h2 {
+    margin-bottom: 20px;
+  }
+  .one-news {
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    article {
+      margin-bottom: 5px;
+    }
+    .read-more {
+      text-align: right;
+    }
+  }
+}
+/*b-news*/
+
+/*pagination */
+.pagination {
+  .btn-group {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    margin: 0;
+    padding: 0;
+    .btn {
+      border: medium none;
+      color: #999999;
+      margin: 0;
+      outline: medium none;
+      &.active {
+        color: #333333;
+        &:hover, &:focus {
+          color: #333;
+        }
+      }
+      &:hover, &:focus {
+        color: #777;
+      }
+    }
+  }
+}
+/*pagination */
+
+/*breadcrumb*/
+.breadcrumb {
+  background: #f2f2f2;
+}
+/*breadcrumb*/
+
+/*page*/
+.default {
+  .body {
+    h3 {
+      margin: 15px 0 5px;
+    }
+  }
+}
+/*page*/

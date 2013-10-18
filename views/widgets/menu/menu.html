@@ -9,7 +9,7 @@
 </script>
 
 <div>
-    <ul class="nav navbar-nav">
+    <ul class="nav">
         <li ng-class="{'dropdown': item.children.length}" ng-repeat="item in menu.children" ng-controller="bcMenu.Controllers.MenuItem" ng-include="'menu/item'"></li>
     </ul>
 </div>

@@ -1,14 +1,16 @@
-<div>
+<div class="slide-reveal gallery">
+    <div>
     <span ng-repeat="crumb in page.breadcrumbs">
         <a class="h1" ng-if="$last" ng-href="{{ crumb.$url }}">{{ crumb.title|language }}</a>
     </span>
+    </div>
+
+    <h1>{{page.title|language}}</h1>
+
+    <div class="body description description-gallery" ng-bind-html="page.body.en"></div>
+
+    <div bz-galleria="page.images"></div>
+
+    <div ng-include="'/views/block/summary.html'"></div>
+    <div ng-include="'/views/block/comments.html'"></div>
 </div>
-
-<h1>{{page.title|language}}</h1>
-
-<div class="body description description-gallery" ng-bind-html="page.body.en"></div>
-
-<div bz-galleria="page.images"></div>
-
-<div ng-include="'/views/block/summary.html'"></div>
-<div ng-include="'/views/block/comments.html'"></div>

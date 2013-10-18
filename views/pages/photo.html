@@ -1,12 +1,14 @@
-<div>
-    <a class="h1" href="/c-photo">Фото</a>
+<div class="slide-reveal photo">
+    <div>
+        <a class="h1" href="/c-photo">Фото</a>
+    </div>
+
+    <img ng-src="{{ page.images.0.url }}"/>
+
+    <h1 class="heading text-center">{{page.title|language}}</h1>
+
+    <div class="body description description-photo" ng-bind-html="page.body.en"></div>
+
+    <div ng-include="'/views/block/summary.html'"></div>
+    <div ng-include="'/views/block/comments.html'"></div>
 </div>
-
-<img ng-src="{{ page.images.0.url }}" />
-
-<h1 class="heading text-center">{{page.title|language}}</h1>
-
-<div class="body description description-photo" ng-bind-html="page.body.en"></div>
-
-<div ng-include="'/views/block/summary.html'"></div>
-<div ng-include="'/views/block/comments.html'"></div>

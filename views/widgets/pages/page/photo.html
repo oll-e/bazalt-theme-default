@@ -1,7 +1,9 @@
-<a smooth-scroll data-target="top" class="feed-title" ng-href="{{ page.url }}">
-    <img ng-src="{{ page.images.0.url }}" />
-</a>
+<div class="photo widget">
+    <a smooth-scroll data-target="top" class="feed-title" ng-href="{{ page.url }}">
+        <img ng-src="{{ page.images.0.url }}" />
+    </a>
 
-<div class="body description description-photo">
-    <div ng-bind-html="page.body.en"></div>
+    <div class="body description description-photo">
+        <div ng-bind-html="page.body.en"></div>
+    </div>
 </div>

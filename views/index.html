@@ -1,15 +1,54 @@
-<div class="mainpage">
+<div class="row">
+    <div class="col col-lg-9 content" bz-loading-container="loading">
+        <div class="mainpage">
 
-    <div bz-widget="'bcPages.Widgets.Category'"></div>
+            <div bz-widget="'bcPages.Widgets.Category'"></div>
 
-    <div class="main-feed">
-        <div ng-repeat="article in list">
-            <h3>{{ article.title }}</h3>
-            <hr/>
-            <div bz-comments="article.comments" class="col col-lg-4"></div>
+            <div class="main-feed">
+                <!--E:\projects\theme-default\bazalt\src\components\bcPages\controllers\Widget\Category.js - param.truncate -->
+                <div ng-repeat="article in list">
+                    <h3>{{ article.title }}</h3>
+                    <hr/>
+                    <div bz-comments="article.comments" class="col col-lg-4"></div>
+                </div>
+            </div>
+
+            <div jquery-galleria="page.images"></div>
+
         </div>
     </div>
-
-    <div jquery-galleria="page.images"></div>
-
+    <div class="col col-lg-3 sidebar">
+        <div class="b-news">
+            <h2>News</h2>
+            <hr />
+            <div class="one-news">
+                <article>
+                    <div class="date label label-primary"><i class="icon-calendar"></i> 05.10.2013</div>
+                    На днях случился конфуз с популярной социальной сетью IT-специалистов «Хабрахабр». Портал попал в «черный список» запрещенных сайтов.
+                </article>
+                <p class="read-more">
+                    <a class="btn btn-xs btn-default" title="Read more" ng-href="/post-10016" href="/post-10016"><i class="icon-hand-right"></i> Читать далее</a>
+                </p>
+            </div>
+            <div class="one-news">
+                <article>
+                    <div class="date label label-primary"><i class="icon-calendar"></i> 05.10.2013</div>
+                    На днях случился конфуз с популярной социальной сетью IT-специалистов «Хабрахабр». Портал попал в «черный список» запрещенных сайтов.
+                </article>
+                <p class="read-more">
+                    <a class="btn btn-xs btn-default" title="Read more" ng-href="/post-10016" href="/post-10016"><i class="icon-hand-right"></i> Читать далее</a>
+                </p>
+            </div>
+            <div class="one-news">
+                <article>
+                    <div class="date label label-primary"><i class="icon-calendar"></i> 05.10.2013</div>
+                    На днях случился конфуз с популярной социальной сетью IT-специалистов «Хабрахабр». Портал попал в «черный список» запрещенных сайтов.
+                </article>
+                <p class="read-more">
+                    <a class="btn btn-xs btn-default" title="Read more" ng-href="/post-10016" href="/post-10016"><i class="icon-hand-right"></i> Читать далее</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
 </div>

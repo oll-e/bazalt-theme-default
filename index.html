@@ -18,26 +18,20 @@
 <div id="wrap" class="ng-cloak page-layout">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Default site</a>
+                <a class="navbar-brand" href="/">UkrCastle.coms</a>
             </div>
             <div class="pull-right main-menu">
-                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 8 }"></div>
+                <div bz-widget="'bcMenu.Widgets.Menu'" data-settings="{ 'id': 4 }"></div>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col col-lg-9 content" bz-loading-container="loading">
-                <div class="slide-reveal" app-view-segment="0"></div>
-            </div>
-            <div class="col col-lg-3 sidebar" ng-include="'/views/block/sidebar.html'">
-
-            </div>
-            <div class="clearfix"></div>
+        <div class="main-container">
+            <div class="slide-reveal" app-view-segment="0"></div>
         </div>
     </div>
 </div>

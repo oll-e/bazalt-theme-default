@@ -1,24 +1,25 @@
 <div class="summary clearfix">
 
-    <div class="date label label-info pull-right"><i class="icon-calendar"></i> {{
-        page.created_at|date:'dd.MM.yyyy' }}
-    </div>
-
     <div class="block label label-info view pull-right">
         <i class="icon-eye-open"></i> {{ page.hits }}
     </div>
 
+    <div class="block label label-info view pull-right" ng-if="page.is_allow_comments">
+        <i class="icon-comment"></i> {{ page.comments_count }}
+    </div>
+
     <div class="block" ng-if="showMore">
         <a smooth-scroll data-target="top" ng-href="{{ page.url }}" title="{{page.title|language}}"
-           class="read-more btn btn-sm btn-default"><i class="icon-hand-right"></i> Читать далее</a>
+           class="read-more btn btn-xs btn-default"><i class="icon-hand-right"></i> Читать далее</a>
+    </div>
+
+
+    <div class="date label label-primary pull-right"><i class="icon-calendar"></i> {{
+        page.created_at|date:'dd.MM.yyyy' }}
     </div>
 
     <div class="block">
         <div bz-rating="page.rating"></div>
-    </div>
-
-    <div class="block" ng-if="page.is_allow_comments">
-        <i class="icon-comment"></i> {{ page.comments_count }}
     </div>
 
     <div class="block">

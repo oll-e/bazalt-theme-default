@@ -1,13 +1,14 @@
 <!--a smooth-scroll data-target="top" class="feed-title" ng-href="{{ page.url }}">
     <img ng-src="{{ page.images.0.thumbnailUrl }}" />
 </a-->
+<div class="gallery widget">
+    <div class="body description description-gallery">
+        <div ng-bind-html="page.body.en"></div>
+    </div>
 
-<div class="body description description-gallery">
-    <div ng-bind-html="page.body.en"></div>
+    <ul class="page-images list-unstyled nav-pills nav">
+        <li ng-repeat="image in page.images|limitTo:8">
+            <a class="thumbnail" ng-href="{{ page.url }}" rel="gallery"><img ng-src="{{ image.thumbnails.preview }}"/></a>
+        </li>
+    </ul>
 </div>
-
-<ul class="page-images list-unstyled nav-pills nav">
-    <li ng-repeat="image in page.images|limitTo:8">
-        <a class="thumbnail" ng-href="{{ page.url }}" rel="gallery"><img ng-src="{{ image.thumbnails.preview }}"/></a>
-    </li>
-</ul>

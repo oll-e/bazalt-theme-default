@@ -1,10 +1,10 @@
-<div class="row-fluid">
-    <div class="span3" ng-if="page.images.0">
+<div class="row-fluid default widget">
+    <div class="col-lg-3" ng-if="page.images.0">
         <a smooth-scroll data-target="top" ng-href="{{ page.url }}" class="poster">
             <img ng-src="{{ page.images.0.thumbnails.preview }}" alt="{{page.title|language}}" />
         </a>
     </div>
-    <div ng-class="{ 'span9': page.images.0, 'span12': !page.images.0 }">
+    <div ng-class="{ 'col-lg-9': page.images.0, 'col-lg-12': !page.images.0 }">
         <div class="body">
             <div ng-bind-html="page.body.en"></div>
         </div>

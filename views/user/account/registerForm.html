@@ -1,14 +1,14 @@
-<div class="registration">
-    <h1>Реєстрація</h1>
+<div class="registration" ng-init="banner.categoryId = 'registration'">
+    <h1>Регистрация</h1>
 
     <div ng-if="formError">
         {{formError}}
     </div>
 
     <form class="registration form-horizontal"  name="register" ng-submit="saveUser(user)" novalidate>
-        <div class="control-group" ng-class="{ 'error': (register.email.$dirty && register.email.$invalid) || formError.email}">
-            <label class="control-label">E-mail<span class="star">*</span></label>
-            <div class="controls">
+        <div class="form-group" ng-class="{ 'error': (register.email.$dirty && register.email.$invalid) || formError.email}">
+            <label class="control-label col-lg-3">E-mail<span class="star">*</span></label>
+            <div class="controls col-lg-9">
                 <input class="form-control" type="email" placeholder="Введіть Ваш e-mail" ng-model="user.email" ng-unique="checkEmail($value)" name="email" required>
                 <div class="ng-cloak help-block" ng-if="register.email.$dirty && register.email.$error.email">
                     Неверно заполнено поле Е-mail
@@ -18,66 +18,54 @@
                 </div>
             </div>
         </div>
-        <div class="control-group" ng-class="{ 'error': register.password.$dirty &&  register.password.$invalid }">
-            <label class="control-label" for="sign-up-password">Пароль<span class="star">*</span></label>
-            <div class="controls">
-                <input class="form-control" placeholder="Пароль" id="sign-up-password" name="password" type="password" ng-model="user.password" ng-required="true" ng-minlength="6" ng-maxlength="50"/>
+        <div class="form-group" ng-class="{ 'error': register.password.$dirty &&  register.password.$invalid }">
+            <label class="control-label col-lg-3" for="sign-up-password">Пароль<span class="star">*</span></label>
+            <div class="controls col-lg-9">
+                <input class="form-control" placeholder="Пароль" id="sign-up-password" name="password" type="password" ng-model="user.password" required ng-minlength="6" ng-maxlength="50"/>
                 <div class="ng-cloak help-block" ng-show="register.password.$dirty && register.password.$invalid">
                     <span ng-show="register.password.$error.minlength">Пароль должен быть больше 6 символов</span>
                     <span ng-show="register.password.$error.maxlength">Пароль должен быть меньше 50 символов</span>
                 </div>
             </div>
         </div>
-        <div class="control-group" ng-class="{ 'error': register.spassword.$dirty && register.spassword.$invalid }">
-            <label class="control-label">Повторите пароль<span class="star">*</span></label>
-            <div class="controls">
-                <input class="form-control" placeholder="Повторно введіть пароль" name="spassword" type="password" ng-required bv-compare="user.password" ng-model="user.spassword"/>
+        <div class="form-group" ng-class="{ 'error': register.spassword.$dirty && register.spassword.$invalid }">
+            <label class="control-label col-lg-3">Повторите пароль<span class="star">*</span></label>
+            <div class="controls col-lg-9">
+                <input class="form-control" placeholder="Повторно введіть пароль" name="spassword" type="password" required bv-compare="user.password" ng-model="user.spassword"/>
                 <div class="ng-cloak help-block" ng-show="register.spassword.$dirty && register.spassword.$invalid">
                     <span ng-show="register.spassword.$error.bvCompare">Пароли не совпадают</span>
                 </div>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label">Имя</label>
-            <div class="controls">
+        <div class="form-group">
+            <label class="control-label col-lg-3">Имя</label>
+            <div class="controls col-lg-9">
                 <input class="form-control" type="text" placeholder="Введите имя" ng-model="user.firstname">
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label">Фамилия</label>
-            <div class="controls">
+        <div class="form-group">
+            <label class="control-label col-lg-3">Фамилия</label>
+            <div class="controls col-lg-9">
                 <input class="form-control" type="text" placeholder="Введите фамилию" ng-model="user.secondname">
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label">Дата рождения</label>
-            <div class="controls">
-                <div class="input-group input-append date" id="dpYears" data-date="01.01.1980" data-date-format="dd.mm.yyyy" data-date-start-view="2">
-                    <input class="col-lg-2 form-control" size="16" bz-datepicker type="text" ng-model="user.birth_date" />
-                    <span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
+        <div class="form-group">
+            <div class="controls col-lg-9 col-lg-offset-3">
                 <label class="checkbox">
-                    <input id="tandc" ng-model="form.tandc" type="checkbox" name="tandc" ng-true-value="agreed" required="required" class="check_boxes"/>
-                    Я согласен с <a href="http://mixfree.ua2.biz/p-ysloviya-ispolzovaniya" data-target="#myModal" data-toggle="modal">Условиями использования</a>
+                    <input id="tandc" ng-model="user.agree" type="checkbox" name="agree" required class="check_boxes"/>
+                    Я согласен с <a href="/post-29" target="_blank">условиями портала</a>
                 </label>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
+        {{register.$error.required}}
+        {{register.$invalid}}
+        <div class="form-group">
+            <div class="controls col-lg-9 col-lg-offset-3">
                 <button ng-disabled="register.$invalid || loading" ng-click="registerUser(user)" class="btn btn-primary">
                     <span ng-hide="loading">Регистрация</span>
                     <span ng-show="loading">Регистрация...</span>
                 </button>
             </div>
         </div>
-<!--
-        {{user|json}}
--->
     </form>
 </div>
